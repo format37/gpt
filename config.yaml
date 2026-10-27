@@ -1,0 +1,4 @@
+prepare_dataset:
+  metadata_folder: /home/alex/projects/gutenberg/metadata/metadata.csv
+  data_dir: /home/alex/projects/gutenberg/data/raw
+  target_dir: /home/alex/projects/gutenberg/data/target
