@@ -2,7 +2,7 @@
 # Source: https://github.com/c-w/gutenberg (gutenberg/_domain_model/text.py,
 # gutenberg/cleanup/strip_headers.py), version 0.8.2.
 """Remove the Project Gutenberg header and footer from a book."""
-
+# Modified: footer markers are checked from the first line (removed `if i >= 100`)
 import os
 
 
@@ -135,14 +135,14 @@ def strip_headers(text):
                 out = []
                 continue
 
-        if i >= 100:
-            # Check if the footer begins here
-            if any(line.startswith(token) for token in TEXT_END_MARKERS):
-                footer_found = True
+        # if i >= 100:
+        # Check if the footer begins here
+        if any(line.startswith(token) for token in TEXT_END_MARKERS):
+            footer_found = True
 
-            # If it's the beginning of the footer, stop output
-            if footer_found:
-                break
+        # If it's the beginning of the footer, stop output
+        if footer_found:
+            break
 
         if any(line.startswith(token) for token in LEGALESE_START_MARKERS):
             ignore_section = True
