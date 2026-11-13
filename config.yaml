@@ -2,3 +2,6 @@ prepare_dataset:
   metadata_folder: /home/alex/projects/gutenberg/metadata/metadata.csv
   data_dir: /home/alex/projects/gutenberg/data/raw
   target_dir: /home/alex/projects/gutenberg/data/target
+tokenizer:
+  sample_file: /home/alex/projects/gutenberg/data/target/combined_1.txt
+  sample_chars: 200000
